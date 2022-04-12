@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/taquin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gloria+Hallelujah&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <title>LE TAQUIN</title>
+</head>
+
+<body>
+    <h1>Le jeu du Taquin</h1>
+    <div class="rules">
+        <p>Sur un plateau de 16 cases, il faut replacer,
+            en les glissant, 15 pions dans le bon ordre avec le moins de mouvements possibles.</p>
+        <p>Un click sur le bouton <strong>[Nouveau]</strong> charge les pièces du puzzle.</p>
+        <p>Vous pouvez afficher l'image "modèle" si vous le souhaiter en cliquant sur <strong>[Aide]</strong>.</p>
+
+        <p>Avec la souris, cliquez sur le pion que vous voulez déplacer vers la case libre.</p>
+    </div>
+    <div class="menu">
+        <button value="Nouveau" id="newGame" onclick="Play()">Nouveau</button>
+        <button value="Aide" id="assist" onclick="Assist()" disabled>Aide</button>
+    </div>
+    <div class="container">
+        <div id="platter">
+        </div>
+        <div id="picModel">
+        </div>
+    </div>
+
+    <div id="oModal" class="oModal">
+        <div>
+            <header>
+                <a href="#fermer" title="Fermer la fenêtre" class="droite">X</a>
+                <h2>Jeu du Taquin</h2>
+            </header>
+            <section>
+                <p id="message">FELICITATIONS VOUS AVEZ GAGNE !</p>
+            </section>
+            <footer class="cf">
+                <a href="#fermer" class="btn droite" id="close" title="Fermer la fenêtre">Fermer</a>
+            </footer>
+        </div>
+    </div>
+    <a href="#oModal" id="linkModal">Ouvrir le popup</a>
+    <script type="text/javascript" src="./assets/js/taquin.js"></script>
+</body>
+
+</html>

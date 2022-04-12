@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+html{background-image: url("../img/bcg.jpg");
+    color: #f5f5f5;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+h1{
+    text-align: center;
+    padding:10px;
+    background-color: #a52a2a;
+    border-radius:5px;
+    margin-bottom: 5px;
+}
+.rules>p{
+    text-shadow: #ff0000 2px 5px;
+    font-size: 0.7rem;
+}
+button{
+    padding:12px;
+    background-color: #d2691e;
+    border-radius:5px;
+    margin:15px;
+}
+
+table{
+    width:400px;
+    height: 400px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#platter{
+    display: flex;
+    width:fit-content;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 0;
+    margin-right: 0;
+}
+table{
+    border:4px solid #ffffff;
+    border-radius:5px;
+}
+#picModel{
+    margin:0;
+}
+#picModel img{
+    border: 4px solid #a52a2a;
+    border-radius:5px;
+    width:max-content;
+    margin:100px;
+    margin-top: 130px;
+}
+.pawn { 
+    min-width: 100px;
+    background-color: #ffffff;
+    box-shadow: inset 2px 2px 2px 2px white;
+    border: 4px solid #a52a2a;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    border-radius:5px;
+    cursor: default;
+    user-select: none;
+    transition: transform .2s;
+}
+  /*.pawn img:active{
+    
+    animation-direction: normal;
+  }*/
+  @keyframes glissementBot {
+    from {
+      top:0px;
+    }
+  
+    to {
+      top:110px;
+    }
+  }
+  @keyframes glissementTop {
+    from {
+      top:0px;
+    }
+  
+    to {
+      top:-110px;
+    }
+  }
+  @keyframes glissementRight {
+    from {
+      left:0px;
+    }
+  
+    to {
+      left:-110px;
+    }
+  }
+  @keyframes glissementLeft {
+    from {
+      left:0px;
+    }
+  
+    to {
+      left:110px;
+    }
+  }
+.pawn>img{
+    /*animation-duration: 1s;
+    animation-name: glissement;*/
+    position: relative;
+    width: max-content;
+    display: flex;
+}
+.glissementTop{
+    animation-direction: normal;
+    animation-name: glissementTop;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+.glissementBot{
+    animation-direction: normal;
+    animation-name: glissementBot;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+.glissementLeft{
+    animation-direction: normal;
+    animation-name: glissementLeft;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+.glissementRight{
+    animation-direction: normal;
+    animation-name: glissementRight;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.pawn:not(.cellEmpty):hover{
+    transform: scale(1.05);
+}
+
+.pawn-empty {
+    background-color: #ffffff;
+}
+
+.cellEmpty {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: inset 2px 4px 4px 2px black;
+    border: 4px solid #a52a2a;
+    color: #ffffff
+}
+
+td:not(.cellEmpty) {
+    color: #000000;
+}
+
+/* POP_UP MODAL */
+.cf:before,
+.cf:after {
+    content: "";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.droite {
+    float: right;
+}
+
+.oModal {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000000cc;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.oModal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.oModal:target>div {
+    margin: 10% auto;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+header a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.oModal>div {
+    max-width: 600px;
+    position: relative;
+    margin: 1% auto;
+    padding: 8px 8px 8px 8px;
+    border-radius: 5px;
+    background: #d2691e;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.oModal>div header,
+.oModal>div footer {
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 5px 5px 0 0;
+    color: #000000;
+}
+
+.oModal .footer {
+    border: none;
+    border-top: 1px solid #e7e7e7;
+    border-radius: 0 0 5px 5px;
+    color: #000000;
+}
+
+#linkModal {
+    visibility: hidden;
+}
+
+.oModal>div h2 {
+    margin: 0;
+    color: #000000;
+    
+}
+.oModal>div .btn {
+    float: right;
+    color: #000000;
+}
+
+#message {
+    text-align: center;
+    padding: 15px;
+    color: #ffffff;
+    background-color: #a52a2a;
+    border-radius: 10px;
+}
+
+.green {
+    background-color: rgb(6, 177, 6);
+}
+
+.red {
+    background-color: #ff0000;
+}
+
+.oModal>div section,
+.oModal>div>header,
+.oModal>div>footer {
+    padding: 15px;
+}
