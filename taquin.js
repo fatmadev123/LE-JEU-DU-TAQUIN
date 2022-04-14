@@ -4,7 +4,7 @@ let arrayPic = [];
 function Play() {
     menuItem = document.getElementById('newGame').disabled = true;
 
-    let imgPathStart = "<img src = './assets/img/chameleon0_";
+    let imgPathStart = "<img src = 'chameleon0_";
     let imgPathEnd = ".jpg'"
     for (let i = 0; i < 15; i++) {
         arrayPic[i] = imgPathStart + (i + 1) + imgPathEnd;
@@ -14,7 +14,7 @@ function Play() {
     buildPlatter(arrayPic);
 }
 function Assist(){
-    document.getElementById('picModel').innerHTML = "<img src= './assets/img/chameleon0.png'>"
+    document.getElementById('picModel').innerHTML = "<img src= 'chameleon0.png'>"
 }
 function buildPlatter(arrayPic) {
     for (let i = 0; i < arrayPic.length; i++) {
